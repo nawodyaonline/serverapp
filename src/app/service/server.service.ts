@@ -1,5 +1,4 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { CATCH_ERROR_VAR } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { throwError, Observable, Subscriber } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
@@ -11,7 +10,7 @@ import { Server } from '../interface/server';
   providedIn: 'root',
 })
 export class ServerService {
-  private readonly apiUrl!: 'any';
+  private readonly apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 
